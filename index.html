@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Professional Page</title>
 
+  <!-- Omenad Bhatkhande Font -->
+  <link rel="stylesheet" href="https://webfonts.omenad.net/fonts.css">
+
   <style>
     body {
       margin: 0;
@@ -63,19 +66,19 @@
       line-height: 1.7;
     }
 
-    button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 20px;
+    .bhatkhande-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 30px;
     }
 
-    button:hover {
-      background: #1d4ed8;
+    .bhatkhande {
+      font-family: 'omenad-bhatkhande', serif;
+      font-size: 32px;
+      line-height: 1.8;
+      letter-spacing: 2px;
     }
 
     footer {
@@ -107,20 +110,30 @@
 
   <section class="hero">
     <h2>Welcome to My Space</h2>
-    <p>Clean. Simple. Professional. Built with HTML, CSS, and JavaScript.</p>
+    <p>Clean. Simple. Professional. Now with Bhatkhande notation support.</p>
     <button onclick="greet()">Say Hello</button>
   </section>
 
   <div class="content">
-    <h3>About This Page</h3>
-    <p>
-      This is a simple, elegant starter page designed for GitHub Pages.
-      You can use it for blogging, portfolios, documentation, or personal notes.
-    </p>
+    <h3>Bhatkhande Notation Samples</h3>
+    <p>Rendered using the Omenad Bhatkhande font:</p>
+
+    <div class="bhatkhande-box">
+      <div class="bhatkhande">
+        S R G m | P D N S' ||
+      </div>
+
+      <div class="bhatkhande">
+        S' N D P | m G R S ||
+      </div>
+
+      <div class="bhatkhande">
+        S  .  .  R  G  m  P  D  N  S'
+      </div>
+    </div>
 
     <p>
-      Feel free to customize the colors, layout, and sections to match your style.
-      You can also add more JavaScript to make it interactive.
+      You can add more notation lines using the class <code>bhatkhande</code>.
     </p>
   </div>
 
