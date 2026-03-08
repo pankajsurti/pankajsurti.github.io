@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raag Yaman - Raag Explorer</title>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-wrap">
+        <h1 class="brand">Raag Explorer</h1>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/raags/yaman.html">Raag Yaman</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <a class="crumb" href="/index.html">← Back To Raag List</a>
+      <h2 class="section-title">Raag Yaman</h2>
+      <p class="section-subtitle">
+        A foundational evening raag known for its serene and devotional mood.
+      </p>
+
+      <div class="controls" role="group" aria-label="Accordion controls">
+        <button class="button" id="expandAll" type="button">Expand All</button>
+        <button class="button" id="collapseAll" type="button">Collapse All</button>
+      </div>
+
+      <section class="accordion" aria-label="Raag Yaman sections">
+        <article class="accordion-item open">
+          <button class="accordion-toggle" type="button" aria-expanded="true">
+            Introduction
+          </button>
+          <div class="accordion-panel">
+            <p>
+              Raag Yaman belongs to Kalyan thaat and is generally performed in
+              the first quarter of the night. It uses tivra Ma and creates a
+              spacious, luminous feeling when developed gradually.
+            </p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            Aroah, Avarah, And Pakad
+          </button>
+          <div class="accordion-panel">
+            <p><strong>Aroah:</strong> N R G M^ D N S'</p>
+            <p><strong>Avarah:</strong> S' N D P M^ G R S</p>
+            <p><strong>Pakad:</strong> N R G, R G M^, D N R S</p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            Sargam Geet (Bhatkhande Font)
+          </button>
+          <div class="accordion-panel">
+            <div class="font-selector">
+              <label for="fontChoice">Notation Font:</label>
+              <select id="fontChoice">
+                <option value="bhatkhande-english" selected>OmeBhatkhandeEnglish</option>
+                <option value="bhatkhande-hindi">OmeBhatkhandeHindi</option>
+              </select>
+            </div>
+
+            <div class="notation-box">
+              <p>Yaman Sargam Geet - Sample 1</p>
+              <div class="notation-line bhatkhande-english">N R G M^ | D N S'</div>
+
+              <p>Yaman Sargam Geet - Sample 2</p>
+              <div class="notation-line bhatkhande-english">S' N D P | M^ G R S</div>
+
+              <p>Yaman Sargam Geet - Sample 3</p>
+              <div class="notation-line bhatkhande-english">N R G R | S N R S</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            Bandish
+          </button>
+          <div class="accordion-panel">
+            <p>
+              Placeholder for sthayi and antara lines. You can add lyrics,
+              taal, and notation variants for student practice.
+            </p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            Kriya
+          </button>
+          <div class="accordion-panel">
+            <p>
+              Placeholder for bol-kriya notes, meend emphasis, and layakari
+              guidance linked to this raag.
+            </p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            Alaap
+          </button>
+          <div class="accordion-panel">
+            <p>
+              Placeholder for alaap progression from mandra to taar saptak with
+              characteristic Yaman phrasing.
+            </p>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            Taans
+          </button>
+          <div class="accordion-panel">
+            <p>
+              Placeholder for sapat taans, vakra taans, and bol-taans. Add
+              graded exercises for beginner to advanced students.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">© 2026 Raag Explorer</footer>
+
+    <script>
+      const accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
+      const toggles = Array.from(document.querySelectorAll('.accordion-toggle'));
+      const expandAllButton = document.getElementById('expandAll');
+      const collapseAllButton = document.getElementById('collapseAll');
+      const fontChoice = document.getElementById('fontChoice');
+
+      function setItemOpenState(item, shouldOpen) {
+        const toggle = item.querySelector('.accordion-toggle');
+        item.classList.toggle('open', shouldOpen);
+        toggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      }
+
+      toggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const currentItem = toggle.closest('.accordion-item');
+          const willOpen = !currentItem.classList.contains('open');
+
+          accordionItems.forEach((item) => setItemOpenState(item, false));
+          if (willOpen) {
+            setItemOpenState(currentItem, true);
+          }
+        });
+      });
+
+      expandAllButton.addEventListener('click', () => {
+        accordionItems.forEach((item) => setItemOpenState(item, true));
+      });
+
+      collapseAllButton.addEventListener('click', () => {
+        accordionItems.forEach((item) => setItemOpenState(item, false));
+      });
+
+      fontChoice.addEventListener('change', (event) => {
+        const className = event.target.value;
+        document.querySelectorAll('.notation-line').forEach((line) => {
+          line.classList.remove('bhatkhande-english', 'bhatkhande-hindi');
+          line.classList.add(className);
+        });
+      });
+    </script>
+  </body>
+</html>

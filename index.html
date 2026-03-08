@@ -3,195 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Professional Page</title>
-
-    <!-- Omenad Bhatkhande Font -->
-    <style>
-      @font-face {
-        font-family: 'OmeBhatkhandeEnglish';
-        src: url('/assets/fonts/OmeBhatkhandeEnglish.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'OmeBhatkhandeHindi';
-        src: url('/assets/fonts/OmeBhatkhandeHindi.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      .bhatkhande-english {
-        font-family: 'OmeBhatkhandeEnglish', sans-serif;
-        font-size: 32px;
-      }
-
-      .bhatkhande-hindi {
-        font-family: 'OmeBhatkhandeHindi', sans-serif;
-        font-size: 32px;
-      }
-
-
-      body {
-        margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: #f7f9fc;
-        color: #333;
-      }
-
-      header {
-        background: #1f2937;
-        color: white;
-        padding: 20px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      header h1 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 600;
-      }
-
-      nav a {
-        color: #e5e7eb;
-        margin-left: 20px;
-        text-decoration: none;
-        font-size: 16px;
-      }
-
-      nav a:hover {
-        color: white;
-      }
-
-      .hero {
-        padding: 80px 40px;
-        text-align: center;
-        background: linear-gradient(135deg, #4f46e5, #3b82f6);
-        color: white;
-      }
-
-      .hero h2 {
-        font-size: 40px;
-        margin-bottom: 10px;
-      }
-
-      .hero p {
-        font-size: 18px;
-        opacity: 0.9;
-      }
-
-      .content {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-        line-height: 1.7;
-      }
-
-      .bhatkhande-box {
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        margin-top: 30px;
-      }
-
-      .font-selector {
-        margin-top: 16px;
-      }
-
-      .font-selector select {
-        padding: 8px 12px;
-        border-radius: 6px;
-        border: 1px solid #cbd5e1;
-        font-size: 14px;
-      }
-
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        background: #1f2937;
-        color: #9ca3af;
-        margin-top: 40px;
-      }
-    </style>
-
-    <script>
-      function greet() {
-        alert("Welcome to my professional GitHub Page!");
-      }
-
-      function changeNotationClass(className) {
-        const notationLines = document.querySelectorAll('.notation-line');
-        notationLines.forEach((line) => {
-          line.classList.remove('bhatkhande-english', 'bhatkhande-hindi');
-          line.classList.add(className);
-        });
-      }
-    </script>
+    <title>Raag Explorer - Home</title>
+    <link rel="stylesheet" href="/assets/css/site.css" />
   </head>
-
   <body>
-    <header>
-      <h1>My GitHub Site</h1>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Blog</a>
-        <a href="#">About</a>
-      </nav>
+    <header class="site-header">
+      <div class="header-wrap">
+        <h1 class="brand">Raag Explorer</h1>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/raags/yaman.html">Raag Yaman</a>
+        </nav>
+      </div>
     </header>
 
     <section class="hero">
-      <h2>Welcome to My Space</h2>
-      <p>Clean. Simple. Professional. Now with Bhatkhande notation support.</p>
-      <button onclick="greet()">Say Hello</button>
+      <h2>Learn Raags In A Structured Way</h2>
+      <p>
+        Select a raag to open its introduction page with aroah, avarah, pakad,
+        sargam geet in Bhatkhande font, and expandable sections for bandish,
+        kriya, alaap, and taans.
+      </p>
     </section>
 
-    <div class="content">
-      <h3>Bhatkhande Notation Samples</h3>
-      <p>Rendered using the Omenad Bhatkhande font:</p>
-      <div class="font-selector">
-        <label for="fontChoice">Notation Language:</label>
-        <select id="fontChoice" onchange="changeNotationClass(this.value)">
-          <option value="bhatkhande-english" selected>English</option>
-          <option value="bhatkhande-hindi">Hindi</option>
-        </select>
-      </div>
-
-      <div class="bhatkhande-box">
-        <span>OM NAMAH SHIVAY OM NAMAH SHIVAY</span>
-        <div class="notation-line bhatkhande-english">m mm mm m Gm DmGs</div>
-
-        <span>OM NAMAH SHIVAY OM NAMAH SHIVAY</span>
-        <div class="notation-line bhatkhande-english">m mm mm m Gm DmGs</div>
-
-        <span>HAR HAR BOLE NAMAH SHIVAY</span>
-        <div class="notation-line bhatkhande-english">sNl Gs NlDlNl sm mm</div>
-
-        <span>GANGA DHARAY OM</span>
-        <div class="notation-line bhatkhande-english">G G G m D N su</div>
-
-        <span>GANGA DHARAY</span>
-        <div class="notation-line bhatkhande-english">sususu GuNsu</div>
-
-        <span>HAR HAR BOLE</span>
-        <div class="notation-line bhatkhande-english">N NN suND</div>
-
-        <span>NAMAH SHIVAY</span>
-        <div class="notation-line bhatkhande-english">DN a suD m</div>
-
-        <div class="notation-line bhatkhande-english">S' N D P | m G R S ||</div>
-
-        <div class="notation-line bhatkhande-english">S . . R G m P D N S'</div>
-      </div>
-
-      <p>
-        You can add more notation lines using <code>notation-line bhatkhande-english</code>.
+    <main class="main">
+      <h2 class="section-title">Available Raags</h2>
+      <p class="section-subtitle">
+        Start with Raag Yaman. More raags will be added next.
       </p>
-    </div>
 
-    <footer>© 2026 My GitHub Site — All Rights Reserved</footer>
+      <section class="raag-grid" aria-label="Raag list">
+        <a class="raag-card" href="/raags/yaman.html">
+          <h3>Raag Yaman</h3>
+          <p>
+            Evening raag from Kalyan thaat. Includes detailed introduction,
+            notation, and progressive learning sections.
+          </p>
+        </a>
+
+        <article class="raag-card coming-soon" aria-disabled="true">
+          <h3>Raag Bhupali</h3>
+          <p>Coming soon.</p>
+        </article>
+
+        <article class="raag-card coming-soon" aria-disabled="true">
+          <h3>Raag Bageshree</h3>
+          <p>Coming soon.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      © 2026 Raag Explorer. Built for step-by-step Hindustani classical study.
+    </footer>
   </body>
 </html>
