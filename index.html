@@ -14,8 +14,20 @@
         font-style: normal;
       }
 
+      @font-face {
+        font-family: 'OmeBhatkhandeHindi';
+        src: url('/assets/fonts/OmeBhatkhandeHindi.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
       .bhatkhande-english {
         font-family: 'OmeBhatkhandeEnglish', sans-serif;
+        font-size: 32px;
+      }
+
+      .bhatkhande-hindi {
+        font-family: 'OmeBhatkhandeHindi', sans-serif;
         font-size: 32px;
       }
 
@@ -85,6 +97,17 @@
         margin-top: 30px;
       }
 
+      .font-selector {
+        margin-top: 16px;
+      }
+
+      .font-selector select {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        font-size: 14px;
+      }
+
 
       footer {
         text-align: center;
@@ -98,6 +121,14 @@
     <script>
       function greet() {
         alert("Welcome to my professional GitHub Page!");
+      }
+
+      function changeNotationClass(className) {
+        const notationLines = document.querySelectorAll('.notation-line');
+        notationLines.forEach((line) => {
+          line.classList.remove('bhatkhande-english', 'bhatkhande-hindi');
+          line.classList.add(className);
+        });
       }
     </script>
   </head>
@@ -121,36 +152,43 @@
     <div class="content">
       <h3>Bhatkhande Notation Samples</h3>
       <p>Rendered using the Omenad Bhatkhande font:</p>
+      <div class="font-selector">
+        <label for="fontChoice">Notation Font:</label>
+        <select id="fontChoice" onchange="changeNotationClass(this.value)">
+          <option value="bhatkhande-english" selected>OmeBhatkhandeEnglish</option>
+          <option value="bhatkhande-hindi">OmeBhatkhandeHindi</option>
+        </select>
+      </div>
 
       <div class="bhatkhande-box">
         <span>OM NAMAH SHIVAY OM NAMAH SHIVAY</span>
-        <div class="bhatkhande">m mm mm m Gm DmGs</div>
+        <div class="notation-line bhatkhande-english">m mm mm m Gm DmGs</div>
 
         <span>OM NAMAH SHIVAY OM NAMAH SHIVAY</span>
-        <div class="bhatkhande-english">m mm mm m Gm DmGs</div>
+        <div class="notation-line bhatkhande-english">m mm mm m Gm DmGs</div>
 
         <span>HAR HAR BOLE NAMAH SHIVAY</span>
-        <div class="bhatkhande-english">sNl Gs NlDlNl sm mm</div>
+        <div class="notation-line bhatkhande-english">sNl Gs NlDlNl sm mm</div>
 
         <span>GANGA DHARAY OM</span>
-        <div class="bhatkhande">G G G m D N su</div>
+        <div class="notation-line bhatkhande-english">G G G m D N su</div>
 
         <span>GANGA DHARAY</span>
-        <div class="bhatkhande-english">sususu GuNsu</div>
+        <div class="notation-line bhatkhande-english">sususu GuNsu</div>
 
         <span>HAR HAR BOLE</span>
-        <div class="bhatkhande-english">N NN suND</div>
+        <div class="notation-line bhatkhande-english">N NN suND</div>
 
         <span>NAMAH SHIVAY</span>
-        <div class="bhatkhande-english">DN a suD m</div>
+        <div class="notation-line bhatkhande-english">DN a suD m</div>
 
-        <div class="bhatkhande-english">S' N D P | m G R S ||</div>
+        <div class="notation-line bhatkhande-english">S' N D P | m G R S ||</div>
 
-        <div class="bhatkhande-english">S . . R G m P D N S'</div>
+        <div class="notation-line bhatkhande-english">S . . R G m P D N S'</div>
       </div>
 
       <p>
-        You can add more notation lines using the class <code>bhatkhande</code>.
+        You can add more notation lines using <code>notation-line bhatkhande-english</code>.
       </p>
     </div>
 
