@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ae Malika Tere Bande Hum - Hindi Song Notation</title>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-wrap">
+        <h1 class="brand">Raag Explorer</h1>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/songs/index.html">Hindi Songs</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <a class="crumb" href="/songs/index.html">← Back To Songs</a>
+      <h2 class="section-title">Ae Malika Tere Bande Hum</h2>
+      <p class="section-subtitle">Hindi song notation page with Bhatkhande font selection.</p>
+
+      <div class="font-selector">
+        <label for="fontChoice">Notation Font:</label>
+        <select id="fontChoice">
+          <option value="bhatkhande-english" selected>OmeBhatkhandeEnglish</option>
+          <option value="bhatkhande-hindi">OmeBhatkhandeHindi</option>
+        </select>
+      </div>
+
+      <div class="notation-box">
+        <p>Line 1</p>
+        <div class="notation-line bhatkhande-english">S R G m | P D P m</div>
+
+        <p>Line 2</p>
+        <div class="notation-line bhatkhande-english">G m R S | R G m P</div>
+
+        <p>Line 3</p>
+        <div class="notation-line bhatkhande-english">D N S' N | D P m G</div>
+      </div>
+    </main>
+
+    <footer class="page-footer">© 2026 Raag Explorer</footer>
+
+    <script>
+      const fontChoice = document.getElementById('fontChoice');
+
+      fontChoice.addEventListener('change', (event) => {
+        const className = event.target.value;
+        document.querySelectorAll('.notation-line').forEach((line) => {
+          line.classList.remove('bhatkhande-english', 'bhatkhande-hindi');
+          line.classList.add(className);
+        });
+      });
+    </script>
+  </body>
+</html>

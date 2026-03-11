@@ -248,6 +248,58 @@ body {
   display: block;
 }
 
+.alphabet-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 14px;
+}
+
+.alphabet-nav a {
+  text-decoration: none;
+  color: #5d130c;
+  background: #fff1d5;
+  border: 1px solid #e5c088;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 10px;
+}
+
+.alphabet-nav a:hover {
+  background: #ffe5b8;
+}
+
+.song-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.song-list a {
+  display: block;
+  text-decoration: none;
+  background: #fffef8;
+  border: 1px solid var(--border);
+  color: #4f2a16;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
+}
+
+.song-list a:hover {
+  border-color: #d89e58;
+  background: #fff4dc;
+}
+
+.song-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .notation-box {
   background: #ffffff;
   border: 1px solid var(--border);

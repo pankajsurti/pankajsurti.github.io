@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hindi Song Notation - Song Index</title>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-wrap">
+        <h1 class="brand">Raag Explorer</h1>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/raags/yaman.html">Raag Yaman</a>
+          <a href="/songs/index.html">Hindi Songs</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <a class="crumb" href="/index.html">← Back To Home</a>
+      <h2 class="section-title">Hindi Song Notation</h2>
+      <p class="section-subtitle">
+        Browse songs alphabetically by title. Open one section at a time or use
+        expand/collapse controls.
+      </p>
+
+      <div class="controls" role="group" aria-label="Song index controls">
+        <button class="button" id="expandAll" type="button">Expand All</button>
+        <button class="button" id="collapseAll" type="button">Collapse All</button>
+      </div>
+
+      <nav class="alphabet-nav" aria-label="Alphabet jump navigation">
+        <a href="#letter-a">A</a>
+        <a href="#letter-h">H</a>
+        <a href="#letter-o">O</a>
+      </nav>
+
+      <section class="accordion" aria-label="Songs by alphabet">
+        <article class="accordion-item open" id="letter-a">
+          <button class="accordion-toggle" type="button" aria-expanded="true">
+            A
+          </button>
+          <div class="accordion-panel">
+            <ul class="song-list">
+              <li>
+                <a href="/songs/ae-malika-tere-bande-hum.html">Ae Malika Tere Bande Hum</a>
+                <p class="song-meta">Prayer style composition with clear sargam movement.</p>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="accordion-item" id="letter-h">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            H
+          </button>
+          <div class="accordion-panel">
+            <ul class="song-list">
+              <li>
+                <a href="/songs/har-har-bole-namah-shivay.html">Har Har Bole Namah Shivay</a>
+                <p class="song-meta">Devotional notation with recurring phrase patterns.</p>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="accordion-item" id="letter-o">
+          <button class="accordion-toggle" type="button" aria-expanded="false">
+            O
+          </button>
+          <div class="accordion-panel">
+            <ul class="song-list">
+              <li>
+                <a href="/songs/om-namah-shivay.html">Om Namah Shivay</a>
+                <p class="song-meta">Beginner-friendly devotional line for font practice.</p>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">© 2026 Raag Explorer</footer>
+
+    <script>
+      const accordionItems = Array.from(document.querySelectorAll('.accordion-item'));
+      const toggles = Array.from(document.querySelectorAll('.accordion-toggle'));
+      const expandAllButton = document.getElementById('expandAll');
+      const collapseAllButton = document.getElementById('collapseAll');
+
+      function setItemOpenState(item, shouldOpen) {
+        const toggle = item.querySelector('.accordion-toggle');
+        item.classList.toggle('open', shouldOpen);
+        toggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      }
+
+      toggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const currentItem = toggle.closest('.accordion-item');
+          const willOpen = !currentItem.classList.contains('open');
+
+          accordionItems.forEach((item) => setItemOpenState(item, false));
+          if (willOpen) {
+            setItemOpenState(currentItem, true);
+          }
+        });
+      });
+
+      expandAllButton.addEventListener('click', () => {
+        accordionItems.forEach((item) => setItemOpenState(item, true));
+      });
+
+      collapseAllButton.addEventListener('click', () => {
+        accordionItems.forEach((item) => setItemOpenState(item, false));
+      });
+    </script>
+  </body>
+</html>
