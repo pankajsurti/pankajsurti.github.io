@@ -313,12 +313,12 @@ body {
 
 .bhatkhande-english {
   font-family: 'OmeBhatkhandeEnglish', sans-serif;
-  font-size: 30px;
+  font-size: 8.0pt;
 }
 
 .bhatkhande-hindi {
   font-family: 'OmeBhatkhandeHindi', sans-serif;
-  font-size: 30px;
+  font-size: 8.0pt;
 }
 
 @media (max-width: 700px) {
