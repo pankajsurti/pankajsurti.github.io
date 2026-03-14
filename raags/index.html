@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raag Explorer - Content Explorer</title>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-wrap">
+        <h1 class="brand">Raag Explorer</h1>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/raags/index.html">Raag Explorer</a>
+          <a href="/songs/index.html">Hindi Songs</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <a class="crumb" href="/index.html">← Back To Home</a>
+      <h2 class="section-title">Raag Content Explorer</h2>
+      <p class="section-subtitle">
+        Browse raag content from a Google Sheet, search by name/thaat/mood, and
+        view details in one place.
+      </p>
+
+      <section class="sheet-config" aria-label="Google sheet configuration">
+        <h3>Google Sheet Source</h3>
+        <p class="sheet-help">
+          Publish your sheet to the web, then paste Sheet ID and GID below.
+          Required columns: id, name, thaat, time, mood, aroh, avroh, pakad,
+          description.
+        </p>
+        <div class="sheet-config-grid">
+          <label>
+            Sheet ID
+            <input id="sheetIdInput" type="text" placeholder="1AbC...XYZ" />
+          </label>
+          <label>
+            GID
+            <input id="sheetGidInput" type="text" placeholder="0" />
+          </label>
+          <button id="sheetApplyButton" class="button" type="button">Load Data</button>
+        </div>
+        <p id="dataStatus" class="sheet-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="explorer-layout" aria-label="Raag explorer">
+        <aside class="explorer-sidebar">
+          <label for="raagSearch" class="search-label">Search Raags</label>
+          <input
+            id="raagSearch"
+            class="search-input"
+            type="search"
+            placeholder="Try Yaman, Kalyan, devotional..."
+          />
+          <p id="resultCount" class="result-count">0 raags</p>
+          <div id="raagList" class="raag-list" role="listbox" aria-label="Raag list"></div>
+        </aside>
+
+        <article class="explorer-detail" aria-label="Raag details">
+          <h3 id="detailName" class="detail-title">Select a raag</h3>
+          <div class="detail-grid">
+            <p><strong>Thaat:</strong> <span id="detailThaat">-</span></p>
+            <p><strong>Time:</strong> <span id="detailTime">-</span></p>
+            <p><strong>Mood:</strong> <span id="detailMood">-</span></p>
+          </div>
+          <div class="detail-lines">
+            <p><strong>Aroh:</strong> <span id="detailAroh">-</span></p>
+            <p><strong>Avroh:</strong> <span id="detailAvroh">-</span></p>
+            <p><strong>Pakad:</strong> <span id="detailPakad">-</span></p>
+            <p><strong>Description:</strong> <span id="detailDescription">-</span></p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">© 2026 Raag Explorer</footer>
+
+    <script src="/assets/js/raag-data.js"></script>
+    <script src="/assets/js/raag-explorer.js"></script>
+  </body>
+</html>

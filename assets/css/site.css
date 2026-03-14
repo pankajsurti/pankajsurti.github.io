@@ -311,6 +311,141 @@ body {
   margin: 4px 0 10px;
 }
 
+.sheet-config {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 0 0 16px;
+}
+
+.sheet-config h3 {
+  margin: 0 0 8px;
+  color: var(--brand-dark);
+}
+
+.sheet-help {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.sheet-config-grid {
+  display: grid;
+  grid-template-columns: 1fr 120px auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.sheet-config-grid label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.sheet-config-grid input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d2b38f;
+  border-radius: 8px;
+}
+
+.sheet-status {
+  margin: 10px 0 0;
+  color: #5e3d26;
+  font-size: 0.95rem;
+}
+
+.explorer-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 14px;
+}
+
+.explorer-sidebar,
+.explorer-detail {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.search-label {
+  display: block;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: 6px;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid #d2b38f;
+  border-radius: 8px;
+  padding: 9px 10px;
+}
+
+.result-count {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.raag-list {
+  display: grid;
+  gap: 8px;
+}
+
+.raag-list-item {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #fffef8;
+  color: #4f2a16;
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.raag-list-item:hover {
+  border-color: #d89e58;
+  background: #fff4dc;
+}
+
+.raag-list-item.active {
+  border-color: #bd7b34;
+  background: #ffe6be;
+}
+
+.list-empty {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.detail-title {
+  margin: 0 0 10px;
+  color: var(--brand-dark);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.detail-lines p,
+.detail-grid p {
+  margin: 0;
+}
+
+.detail-lines {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
 .bhatkhande-english {
   font-family: 'OmeBhatkhandeEnglish', sans-serif;
   font-size: 8.0pt;
@@ -335,5 +470,13 @@ body {
 
   .main {
     padding: 0 14px 26px;
+  }
+
+  .sheet-config-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explorer-layout {
+    grid-template-columns: 1fr;
   }
 }
